@@ -1,0 +1,1562 @@
+html,
+body {
+	height: 100%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
+.div-bienvenida {
+	height: 700px;
+	background-image: url(https://html.designingmedia.com/crox/assets/images/home_banner_background.png);
+}
+
+.div-bienvenida a {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.div-bienvenida li {
+	display: flex;
+}
+
+.body {
+	height: 82%;
+	display: flex;
+}
+
+.redes {
+	height: 91%;
+	width: 100px;
+}
+
+.Mensaje_bienvenida {
+	width: 80%;
+	height: 91%;
+
+}
+
+.Mensaje_bienvenida p {
+	margin: 100px 0 0 200px;
+	color: white;
+	font-size: 120px;
+	font-family: "Teko", serif;
+	;
+	font-weight: 500;
+	width: 600px;
+	line-height: .9;
+}
+
+.Mensaje_bienvenida label {
+	margin-left: 200px;
+	color: white;
+	font-size: 20px;
+	font-weight: 500;
+	width: 600px;
+}
+
+.noticias {
+	background-image: url(https://html.designingmedia.com/crox/assets/images/live_stream_background.jpg);
+	height: 900px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.titulo_logo {
+	text-align: center;
+	padding-top: 30px;
+}
+
+.titulo_logo h1 {
+	color: white;
+	font-family: "Teko", serif;
+	
+}
+
+.minilogo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.line {
+	border: 1px solid white;
+	width: 50px;
+	height: 1px;
+}
+
+.grid_noticias {
+	display: grid;
+	height: 700px;
+	width: 800px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr .8fr;
+	column-gap: 50px;
+
+
+}
+
+.grid_noticias div {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: transparent;
+}
+
+.grid_noticias div:first-child {
+	grid-column: 1/3;
+	background-image: url("/images/noticia1.png");
+
+	font-size: 25px;
+
+}
+
+.grid_noticias div:nth-child(2) {
+	background-image: url("/images/noticia2.png");
+	background-size: contain;
+
+}
+
+.grid_noticias div:last-child {
+	background-image: url("/images/noticia3.png");
+	background-size: contain;
+
+}
+
+.grid_noticias div:hover {
+	background-image: none;
+	color: white;
+	transition: all 1.4s ease;
+}
+
+.div-clasificacion,
+.div-subcategorias {
+	background-image: url(https://html.designingmedia.com/crox/assets/images/upcoming_matches_background.png);
+	background-size: cover;
+	/* Ajusta la imagen para cubrir el elemento */
+	background-position: center;
+	/* Centra la imagen */
+	background-repeat: no-repeat;
+	/* Evita que la imagen se repita */
+	background-color: #17171b;
+	border-bottom: .5px solid #BD0507;
+}
+
+.div-ultimo {
+	background-image: url(https://html.designingmedia.com/crox/assets/images/benefits_background.jpg);
+	height: 760px;
+}
+
+.div-jugadores {
+	background-image: url(https://html.designingmedia.com/crox/assets/images/benefits_background.jpg);
+	min-height: 300px;
+	max-height: 1200px;
+	padding: 15px 40px;
+	font-family: "Teko", serif;
+}
+
+.div-jugadores h1 {
+	color: white;
+
+}
+
+.div-detalle-torneo {
+	background-image: url("/images/fondo-card-torneo.png");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid white;
+}
+
+div-detalle-club {}
+
+.div-detalle-torneo h6 {
+	color: black;
+}
+
+.div-detalle-torneo p {
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+iv-detalle-torneo span {
+	font-weight: 100;
+}
+
+.div-img-detalle-torneo {
+	display: flex;
+
+}
+
+.div-img-detalle-torneo img {
+	margin: auto;
+	border-radius: 50%;
+}
+
+.div-datos-dellate-torneo {
+	padding: 0 20px;
+}
+
+.div-bienvenida-torneo-detalle {
+	height: max-content;
+	
+}
+
+.div-sinjugadores {
+	font-size: 30px;
+	color: white;
+	height: 100px;
+	margin-top: 50px;
+	text-align: center;
+	border: solid #BD0507 2px;
+	padding: 25px;
+}
+
+.card-jugadores {
+	border: solid #BD0507 2px;
+}
+
+.card-torneos {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 80px;
+	font-family: serif;
+	color: white;
+	font-family: "Teko", serif;
+	padding: 0 40px;
+	column-gap: 50px;
+}
+
+.card-torneos h6 {
+	margin: 10px;
+	font-size: 20px;
+}
+
+.card-torneos a {
+	background-color: #BD0507;
+	text-decoration: none;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+.div-card-torneo {
+	margin-bottom: 50px;
+	padding: 50px;
+	background-color: #18222D;
+	height: 300px;
+	border: 4px solid #1E2A36;
+	border-radius: 15px 40px;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 100px 25px 100px;
+}
+
+.div-card-torneo span {
+	display: block;
+	font-size: 25px;
+	overflow: none;
+
+}
+
+.card-contend {
+	grid-column: 3/13;
+}
+
+.card-contend span:first-child {
+	font-size: 35px;
+	line-height: 1;
+}
+
+.card-contend2 {
+	grid-column: 3/6;
+	text-align: center;
+
+}
+
+.card-contend2 span:first-child,
+.card-contend3 span:first-child,
+.card-contend4 span:first-child {
+	color: #ADB0AC;
+}
+
+.card-contend2 span:last-child {
+	color: #C5DA42;
+}
+
+.line-torneo {
+	grid-column: 1/13;
+	height: 10px;
+	background-color: #10171F;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2),
+		/* Línea superior */
+		0px 1px 3px rgba(255, 255, 255, 0.2);
+	/* Sombra inferior */
+
+}
+
+.card-contend3 {
+	grid-column: 1/3;
+	text-align: center;
+}
+
+.card-contend4 {
+	grid-column: 6/9;
+	text-align: center;
+	overflow: hidden;
+}
+.card-contend4::-webkit-scrollbar{
+	display: none;
+}
+.div-card-torneo a {
+	grid-column: 10/13;
+	height: 50px;
+	background-color: #283849;
+	text-align: center;
+	padding: 12px;
+}
+
+.card-body {
+	text-align: center;
+}
+
+.card-texto {
+	background-color: black;
+	color: red;
+}
+
+.div-titulo-torneo {
+	grid-column: 1/3;
+	text-align: center;
+	font-family: "Teko", serif;
+	;
+	color: white;
+}
+
+.menu {
+	color: white;
+	height: 180px;
+	width: 1000px;
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	text-align: center;
+	font-family: "Irish Grover", serif;;
+}
+
+.menu a {
+	place-self: center;
+}
+
+.inicio-sesion {
+	grid-column: 8/11;
+	place-self: center;
+	border: #BD0507 2px solid;
+	border-radius: 5px;
+	background-color:#111114;
+	height: 50px;
+}
+
+.inicio-sesion span {
+	
+	width: 160px;
+	text-align: center;
+	place-self: center;
+}
+
+.menu img {
+	grid-column: 5/7;
+	place-self: center;
+}
+
+.titulo {
+	font-weight: 700;
+	color: rgb(141, 49, 35);
+}
+
+li {
+	text-decoration: none;
+}
+
+.nav li a {
+	font-weight: 600;
+	color: white;
+}
+
+
+.usuarios {
+	background-color: rgb(208, 232, 255);
+}
+
+.portada {
+	height: 280px;
+	background-color: rgb(81, 9, 9);
+	color: white;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	align-content: center;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.portada h2 {
+	font-size: 50px;
+	padding-left: 20px;
+	font-weight: 800;
+}
+
+.container-card {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 16px;
+	padding: 0 40px;
+}
+
+.highlight {
+	grid-column: span 2;
+	background: #000;
+	border-radius: 8px;
+	overflow: hidden;
+	height: 180px;
+	display: flex;
+	/* Activa flexbox */
+	flex-direction: column;
+	/* Coloca los elementos en una columna */
+	align-items: center;
+	/* Centra los elementos horizontalmente */
+	justify-content: center;
+	/* Centra los elementos verticalmente */
+
+}
+
+.highlight .title {
+	color: #FFF;
+	font-size: 20px;
+	padding-bottom: 10px;
+	font-weight: 700;
+}
+
+.highlight button {
+	background-color: darkred;
+	border: none;
+	padding: 5px 20px;
+	font-weight: 700;
+}
+
+.container-card .card {
+	background: #1e1e1e;
+	border-radius: 8px;
+	overflow: hidden;
+	position: relative;
+	height: 120px;
+	display: flex;
+	/* Activa Flexbox */
+	flex-direction: column;
+	/* Organiza los hijos en una columna */
+	justify-content: flex-end;
+	/* Lleva el contenido al final (parte inferior) */
+	align-items: center;
+	/* Centra los elementos horizontalmente */
+	height: 200px;
+	/* Define una altura fija para la tarjeta */
+	padding: 16px;
+	/* Añade espacio interno */
+	background-color: #1e1e1e;
+	/* Fondo oscuro para las tarjetas */
+	border-radius: 8px;
+	/* Bordes redondeados */
+	position: relative;
+}
+
+.container-card .card .label {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	background: red;
+	color: white;
+	padding: 4px 8px;
+	font-size: 12px;
+	border-radius: 4px;
+}
+
+.container-card .card .title {
+	color: #FFF;
+	font-size: 20px;
+	padding-bottom: 10px;
+	font-weight: 600;
+
+}
+
+.container-card .card button {
+	background-color: darkred;
+	border: none;
+	padding: 5px 20px;
+	font-weight: 700;
+
+}
+
+.div-cate {
+	border: none;
+}
+
+.div-cate h2 {
+	font-family: "Irish Grover", serif;
+	color: white;
+	text-align: center;
+}
+
+.div-card {}
+
+.card-torneo,
+.card-cate {
+	padding: 50px 170px;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	column-gap: 30px;
+
+}
+.card-cate{
+	column-gap: 55px;
+}
+.card-torneo .card {
+	background: transparent;
+	place-self: center;
+
+}
+
+.card-torneo h5 {
+	text-align: center;
+	color: #FFF;
+	font-family: "Teko", serif;
+	;
+	font-size: 35px;
+}
+
+
+.card-text {
+	color: white;
+	font-size: 27px;
+	font-family: "Teko", serif;
+	;
+	text-align: center;
+
+}
+
+.card-cate .card {
+	background: transparent;
+
+}
+
+.div-footer {
+	background-image: url(https://html.designingmedia.com/crox/assets/images/subscribe_background.png);
+	background-size: cover;
+	/* Ajusta la imagen para cubrir el elemento */
+	background-position: center;
+	/* Centra la imagen */
+	background-repeat: no-repeat;
+	/* Evita que la imagen se repita */
+	background-color: black;
+	height: 600px;
+	padding-left: 100px;
+	padding-top: 80px;
+	display: flex;
+}
+
+.mensaje-footer {
+	color: white;
+	font-family: "Teko", serif;
+	;
+	width: 800px;
+	padding: 80px 0 50px 70px;
+
+}
+
+.mensaje-footer span,
+.mensaje-footer label {
+	font-size: 75px;
+	line-height: 1;
+
+
+}
+
+.mensaje-footer label {
+	font-family: "Teko", serif;
+	;
+	color: #BD0507;
+
+}
+
+.robot {
+	background-image: url(https://html.designingmedia.com/crox/assets/images/subscribe_image.png);
+	background-size: cover;
+	/* Ajusta la imagen para cubrir el elemento */
+	background-position: center;
+	/* Centra la imagen */
+	background-repeat: no-repeat;
+	/* Evita que la imagen se repita */
+	height: 520px;
+	width: 400px;
+}
+
+.footer2 {
+	background-color: #BD0507;
+	text-align: center;
+	padding: 20px;
+	color: white;
+
+}
+
+.footer2 h4 {
+	font-size: 16px;
+}
+
+.requisitos {
+	
+	border-radius: 20px;
+	background-color:#191919;
+	padding: 10px;
+}
+
+.requisitos h6 {
+	font-weight: 700;
+	color: white;
+}
+
+.card {
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+	transform: scale(1.02);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+	font-family: 'Arial', sans-serif;
+	letter-spacing: 1px;
+}
+
+.div-datos-dellate-torneo ul li {
+	color: #ddd;
+}
+
+button.btn-primary {
+	background-color: #007bff;
+	border: none;
+	font-size: 1rem;
+	padding: 10px;
+	border-radius: 5px;
+	transition: background 0.3s;
+}
+
+button.btn-primary:hover {
+	background-color: #0056b3;
+}
+
+.card-club {
+	border: #BD0507 2px solid;
+
+}
+.card-group{
+	width: 330px;
+}
+.grid-jugadores{	
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	column-gap: 20px;
+	row-gap: 40px;
+}
+.titulo-clubes {
+	color: white;
+	font-family: "Teko", serif;
+}
+
+.a-clubes {
+	text-decoration: none;
+}
+.body-clubes{
+	padding-bottom: 50px;
+}
+.card-body-club {
+	background-color: black;
+	color: white;
+	font-family: "Teko", serif;
+
+}
+
+.card-body-club h5 {
+	font-size: 30px;
+
+}
+
+
+.div-overflow-tabla {
+	max-height: 635px;
+	overflow: auto;
+	padding: 0 50px;
+}
+.div-overflow-tabla::-webkit-scrollbar{
+	display: none;
+}
+.div-tabla-clasificacion {
+	width: 65%;
+}
+
+.tabla-clasificacion {
+	border-collapse: separate;
+	width: 100%;
+	color: white;
+	border-spacing: 0 20px;
+
+
+}
+
+.tabla-clasificacion tbody tr {
+	background-color: #111114;
+}
+
+.tabla-clasificacion tbody tr td {
+	background-color: #111114;
+	height: 100px;
+
+}
+.tabla-clasificacion tbody tr a{
+	color: white;
+}
+.div-clasificacion-body{
+	height: max-content;
+}
+.tabla-clasificacion tbody tr td:nth-child(4),
+.tabla-clasificacion tbody tr td:nth-child(5) {
+	width: 220px;
+	text-align: center;
+	font-family: "Teko", serif;
+	font-size: 21px;
+	line-height: 1.2;
+}
+
+.tabla-clasificacion tbody tr td:nth-child(6) {
+	width: 60px;
+}
+
+.tabla-clasificacion tbody tr td:nth-child(1) {
+	width: 150px;
+}
+
+.tabla-clasificacion tbody tr td:nth-child(3) {
+	font-family: "Teko", serif;
+	font-size: 30px;
+}
+
+.div-cate-victorias {
+	width: 185px;
+	height: 60px;
+	background-color: #BD0507;
+	padding-top: 5px;
+	border-radius: 5px;
+}
+
+.div-cate-victorias span {
+	display: block;
+	text-align: center;
+}
+
+.logo-clasificacion {
+	width: 55px;
+	height: 60px;
+	margin: 0 15px;
+}
+
+.titulo-clasificacion {
+	font-family: "Teko", serif;
+	font-size: 50px;
+	color: white;
+
+}
+.div-padre-comunidad {
+	min-height: 782px;
+	height: max-content;
+	padding-bottom: 50px;
+}
+
+.body-comunidad {
+	height: min-content;
+	border: 1px solid gray;
+	border-radius: 5px;
+	width: 60%;
+	padding: 0;
+	
+}
+.body-comunidad-hijo{
+	width: 100%;
+}
+
+.titulo-filtro{
+	display: flex;
+	padding: 20px;
+	color: white;
+	border-bottom: 1px solid gray;
+}
+.titulo-filtro h2{
+
+	font-family: "Teko", serif;
+	font-size: 40px;
+}
+.form-filtro{
+	display: flex;
+	margin-left: 10%;
+}
+
+.form-filtro select{
+	border: none;
+	border-top: #BD0507 2px solid;
+	border-left: #BD0507 2px solid;
+	border-bottom: #BD0507 2px solid;
+	background-color: transparent;
+	color: white;
+	font-size: 16px;
+	padding: 7.5px ;
+	border-radius: 5px 0 0 5px;
+	
+}
+.form-filtro select option{
+	background-color: #222; /* Fondo negro */
+	color: #fff; /* Texto blanco */
+	padding: 10px;
+	font-size: 16px;
+}
+.form-filtro select option:hover{
+	background-color: #BD0507; /* Fondo rojo */
+	color: #fff; /* Texto blanco */
+}
+.form-filtro button{
+	padding: 0;
+	border: #BD0507 2px solid;
+	background-color: transparent;
+	color: white;
+	padding: 7.5px ;
+}
+
+.div-comentarios{
+	color: white;
+	font-family: "Teko", serif;
+	min-height: 400px;
+	max-height: 700px;
+	overflow: auto;
+	
+}
+.div-comentarios::-webkit-scrollbar{
+	display: none;
+}
+.modal-content{
+	border: 2px solid white;
+	background-color: #000;
+}
+.button-subir-comentario{
+	background-color: #BD0507;
+	color: white;
+	padding: 7.5px ;
+	border: none;
+	border-radius: 7.5px;
+	font-weight: 500;
+}
+.button-subir-comentario:hover{
+	background-color: #fD1500
+}
+.modal-header .btn-close{
+	background-color: white;
+}
+.textarea-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent; /* Fondo oscuro */
+  height: 200px; /* Pantalla completa */
+  margin-top: 20px;
+}
+
+textarea {
+  background-color: #191919; /* Fondo del textarea */
+  color: #e0e0e0; /* Color del texto */
+  border: .5px solid gray;
+  outline: none; /* Sin borde de foco */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de texto */
+  width: 100%; /* Ancho del textarea */
+  height: 100%; /* Alto del textarea */
+  resize: none; /* Desactiva el redimensionamiento */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+textarea:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra al enfocar */
+  background-color: #333333; /* Fondo más claro al enfocar */
+}
+.select-domal{
+	background-color: #191919;
+	border: .5px solid gray;
+	color: white;
+}
+.tabla-comunidad {
+	border-collapse: separate;
+	border-spacing: 0 25px;
+	width: 100%;
+}
+.tabla-comunidad tbody td:first-child{
+	width: 500px;
+}
+.tabla-comunidad tbody td:last-child{
+	text-align: center;
+}
+.info-comentario{
+	padding: 0 20px;
+	height: 150px;
+	
+}
+.info-comentario span {
+	font-family: "Teko", serif;
+	display: block;
+	color: white;
+
+}
+
+.info-comentario span:first-child {
+	font-size: 30px;
+}
+
+.info-comentario span:nth-child(2) {
+	font-size: 20px;
+	color: orangered;
+}
+.agregar-comentario{
+	
+	padding: 7.5px 10px;
+	margin-left: 20px;
+	color: white;
+	border: 2px solid #BD0507;
+	background-color: transparent;
+	border-radius: 5px;
+	
+}
+
+/*estilos paginacion (comunidad, talvez otros)*/
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+  grid-column: 1/3;
+}
+.pagination-torneo{
+	grid-column: 1/3;
+}
+.pagination .page-item {
+  list-style: none;
+}
+
+.pagination .page-item .page-link {
+  background-color: #111114; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  border: 2px solid #BD0507; /* Borde rojo */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 15px; /* Tamaño del botón */
+  font-size: 16px;
+  font-family: "Teko", serif; /* Tipografía consistente */
+  text-decoration: none; /* Sin subrayado */
+  transition: all 0.3s ease; /* Transición suave */
+  cursor: pointer;
+}
+
+.pagination .page-link:focus {
+  outline: none; /* Eliminar el contorno de enfoque */
+  box-shadow: none; /* Eliminar cualquier sombra que pueda aparecer */
+}
+
+/* Botones en estado 'hover' */
+.pagination .page-item .page-link:hover {
+  background-color: #BD0507; /* Fondo rojo al pasar el ratón */
+  color: white; /* Texto blanco */
+  transform: scale(1.1); /* Aumentar tamaño */
+}
+
+/* Botón activo */
+.pagination .page-item.active .page-link {
+  background-color: #BD0507; /* Fondo rojo */
+  color: white; /* Texto blanco */
+  cursor: default; /* Cursor desactivado */
+}
+
+/* Botón deshabilitado */
+.pagination .page-item.disabled .page-link {
+  background-color: #444; /* Fondo gris oscuro */
+  color: #888; /* Texto gris */
+  border-color: #666; /* Borde gris */
+  cursor: not-allowed; /* Cursor de no permitido */
+  pointer-events: none; /* Sin eventos */
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    gap: 2rem;
+    align-items: center;
+    margin: auto;
+	margin-bottom: 50px;
+    padding: 1rem;
+    background: transparent;
+    border-radius: 10px;
+    color: #fff;
+	height: 500px;
+	width: 1000px;
+}
+.grid-container ul{
+	padding: 15px 0;
+}
+.div-cuadros-torneo{
+	width: 520px;
+}
+.div-cuadros p{
+	display: inline-block;
+	height: 80px;
+	min-width: 150px;
+	max-width: 200px;
+	background-color: #BD0507;
+	font-size: 16px;
+	margin:0;
+	margin-right:20px;
+	text-align: center;
+	padding-top: 10px;
+	color: gainsboro;
+	border-radius: 5px;
+	
+}
+.div-cuadros p strong{
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 22px;
+	color: white;
+}
+
+.image-container {
+    text-align: center;
+	height: 90%;
+}
+
+.club-image {
+    width: 80%;
+    height: 90%;
+  
+}
+.button-solicitar-club,.button-solicitar-torneo{
+	color: white; /* Texto blanco */
+	border: 2px solid #BD0507; /* Borde rojo */
+	border-radius: 5px; /* Bordes redondeados */
+	padding: 10px 15px; /* Tamaño del botón */
+	background-color: transparent;
+	font-weight: bold;
+}
+.button-solicitar-club:hover,.button-solicitar-torneo:hover {
+    background-color: #BD0507; /* Fondo rojo */
+    cursor: pointer; /* Cambia el cursor a una mano */
+	
+}
+.details-container {
+    display: grid;
+   	height: 90%;
+	align-items: start; 
+	grid-auto-rows: min-content; 
+}
+.div-bienvenida-club{
+	height: max-content;
+}
+.club-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.club-description {
+    font-size: 1rem;
+    color: #aaa;
+	margin-top:20px;
+	
+}
+.club-description-club{
+	margin-top: 20px;
+}
+.club-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+	color: #aaa;
+}
+.join-message{
+	font-weight: bold;
+}
+.text-danger {
+    color: #e63946;
+    font-weight: bold;
+}
+.grid-container-torneo{
+	width: 1100px;
+	margin-left: 270px;
+	height: auto;
+}
+.victories-count strong{
+	padding: 0 12px;
+}
+.custom-input {
+	display: none;
+}
+
+/* Estilo del botón personalizado */
+.custom-label {
+	display: inline-block;
+	color: white;
+	padding: 10px 15px 0;
+	font-size: 16px !important;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	height: 100%;
+	border-right: 1px solid dimgrey;
+	margin:0 !important;
+	width: 120px !important;
+}
+
+/* Efecto hover */
+.custom-label:hover {
+	background-color: dimgray;
+}
+
+/* Estilo del texto que muestra el archivo */
+#file-name {
+	margin-top:5px;
+	margin-left: 10px;
+	font-size: 16px;
+	color: #ddd;
+}
+
+.file-efect {
+	background-color: #17171b;
+	border: 1px solid dimgrey;
+	height: 38px;
+	border-radius: 5px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-top:15px;
+
+}
+/*Detalle perfil top 3*/
+.body-top3{
+	background-image: url(https://html.designingmedia.com/crox/assets/images/live_stream_background.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center; /* Centra horizontalmente */
+	align-items: center; /* Centra verticalmente */
+	height: 100vh; /* Ocupa toda la pantalla */
+	margin: 0;
+	background-color: #f5f5f5; /* Color de fondo suave */
+	font-family: Arial, sans-serif; /* Fuente legible */
+}
+/* Estilos generales del cuerpo */
+      .body-top3 {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 100vh; /* Ocupa toda la pantalla */
+            margin: 0;
+            background-color: #f5f5f5; /* Color de fondo suave */
+            font-family: Arial, sans-serif; /* Fuente legible */
+        }
+
+        /* Estilos del contenedor */
+        .perfil-container {
+            text-align: center; /* Centra el contenido del texto */
+            padding: 20px;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            max-width: 400px; /* Ancho máximo */
+            width: 90%; /* Ancho adaptable */
+			background-color: #111114;
+			color: white;
+			border:#BD0507 2px solid;
+        }
+		.perfil-container h1{
+			font-family: "Irish Grover", serif;
+		}
+		.perfil-container p{
+					font-family: "teko", serif;
+					font-size: 20px;
+				}
+	
+        /* Estilos de imagen */
+        .perfil-container img {
+            width:300px ;
+            height: 300px;
+            border-radius:50%; /* Imagen circular */
+            margin-bottom: 20px;
+        }
+
+        /* Estilos del botón */
+        .perfil-container a {
+            display: block; /* Actúa como un botón */
+            text-decoration: none; /* Sin subrayado */
+            color: white; /* Texto blanco */
+            background-color: #BD0507; /* Rojo */
+            padding: 10px 20px; /* Espaciado interno */
+            border-radius: 25px; /* Bordes redondeados */
+            font-weight: bold;
+            transition: background-color 0.3s ease; /* Transición para el hover */
+        }
+
+        /* Efecto hover */
+        .perfil-container a:hover {
+            background-color: #ff4040; /* Rojo más claro */
+        }
+/* Estilo ver perfil */
+.div-body-verperfil {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columnas de igual ancho */
+    grid-template-rows: repeat(10, 1fr);   /* 10 filas de igual altura */
+    gap: 5px; /* Espaciado entre columnas y filas */
+    height: 100vh; /* Ajusta la altura para ocupar toda la pantalla */
+    padding: 5px; /* Margen interno */
+    background-color: #1B1A1A; /* Fondo claro para distinguir la sección */
+	font-family: "Teko", serif;
+}
+
+.div-titulo {
+    grid-column: 1 / 13; /* Ocupa todo el ancho (12 columnas) */
+    grid-row: 1 / 2; /* Primera fila */
+    background-color: #2A343E; /* Fondo rojo */
+    color: white; /* Texto blanco */
+	display: flex;
+    padding: 11px 40px;
+    border-radius: 5px;
+	justify-content: space-between;
+	font-size: 30px;
+	font-family: "Teko", serif;
+}
+.div-titulo div{
+	cursor: pointer;
+}
+
+.div-username {
+    grid-column: 1 / 8; /* Ocupa columnas 2 a 6 */
+    grid-row: 2 / 5; /* Filas 2 y 3 */
+    background-color:#BD0507; /* Fondo negro */
+    color: white; /* Texto blanco */
+    display: grid;
+    padding: 30px 10px;
+    border-radius: 5px;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(5,1fr);
+	gap: 5px;
+	
+}
+.username-img{
+	grid-row: 1/6;
+	grid-column: 1/4;
+	display: flex;
+}
+.username-img img{
+	margin:auto;
+}
+.username-nombre{
+	grid-row: 2/5;
+	grid-column: 4/7;
+}
+.username-nombre span{
+	display: block;
+	font-size: 35px;
+	line-height: 1;
+}
+.username-nombre span:last-child{
+	font-size: 20px;
+}
+.username-correo{
+	grid-row: 1/4;
+	grid-column: 7/9;
+	
+}
+
+.username-correo span{
+	max-width: 110px;
+	overflow-x: auto;
+}
+.username-correo span::-webkit-scrollbar{
+	display: none;
+}
+.username-edad{
+	grid-row: 1/4;
+	grid-column: 9/11;
+}
+.username-estado{
+	grid-row: 1/4;
+	grid-column:11/13;
+}
+.username-correo2{
+	grid-row: 4/6;
+	grid-column: 7/9;
+}
+.username-edad2{
+	grid-row: 4/6;
+	grid-column: 9/11;
+}
+.username-estado2{
+	grid-row: 4/6;
+	grid-column:11/13;
+}
+.username-estado,.username-correo,.username-edad,
+.username-estado2,.username-correo2,.username-edad2{
+	background-color: #AB0507;
+	display: flex;
+	
+}
+.username-estado span,.username-correo span,.username-edad span,
+.username-estado2 span,.username-correo2 span,.username-edad2 span{
+	margin:auto;
+	font-size: 35px;
+}
+.username-estado2 span,.username-correo2 span,.username-edad2 span{
+	width: 70px;
+	text-align: center;
+	background-color:#BD0507;
+	border-radius: 5px;
+	font-size: 25px;
+}
+.div-robot {
+    grid-column: 8 / 13; 
+    grid-row: 2 / 6; 
+    background-color: #2A343E; 
+    color: white; 
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.div-robot span{
+	color: white;
+	font-size: 30px;
+	display: block;
+}
+.div-robot div{
+	height: 80%;
+	background-color: #364452;
+	border-radius: 5px;
+	display: flex;
+}
+.div-robot div img{
+	margin:auto;
+	height: 175px;
+	width: 175px;
+	border-radius: 50%;
+}
+.div-victorias {
+    grid-column: 1 / 8; 
+    grid-row: 5 / 8;
+    background-color: #2A343E;   
+    text-align: center;
+    padding: 30px 40px;
+    border-radius: 5px;
+	display: flex;
+}
+.div-victorias span,.div-trayectoria span{
+	display: block;
+	color: white;
+}
+.div-victorias div:last-child,.div-trayectoria div:last-child{
+	margin-left: 50px;
+}
+.div-victorias span:first-child,.div-trayectoria span:first-child{
+	background-color: #43505C;
+	padding: 0 25px;
+	font-size: 40px;
+	border-radius: 5px;
+	margin:15px 0 25px;
+	width: 205px;
+}
+.div-victorias span:last-child,.div-trayectoria span:last-child{
+	font-size: 30px;
+}
+.div-categoria {
+    grid-column: 8 / 13; 
+    grid-row: 6 / 13; 
+    background-color: #2A343E;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+	color: white;
+}
+.titulo-categoria{
+	font-size: 30px;
+}
+.div-line{
+	display: flex;
+	
+}
+.div-line2{
+	width: 33.3%;
+}
+.linea{
+	height: 10px;
+	background-color: white;
+	margin-bottom: 5px;
+}
+.foto-robot{
+	height: 75%;
+	background-color: #364452;
+	border-radius: 5px;
+	display: flex;
+}
+.foto-robot div{
+	height: 230px;
+	width: 200px;
+	margin:auto;
+	background-image: url("/images/logo-profesional.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.div-trayectoria {
+    grid-column: 1 / 8; 
+    grid-row: 8 / 13; 
+    background-color: #2A343E;  
+    color: black; 
+    text-align: center;
+    padding: 30px 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	display: flex;
+}
+.logo-copa{
+	background-image: url("/images/logocopa.png");
+	height: 150px;
+	width: 150px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.logo-trayectoria{
+	background-image: url("/images/logotrayectoria.png");
+	height: 150px;
+	width: 150px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.modal-body-perfil form{
+	display: flex;
+	flex-direction: column;
+}
+.modal-body-perfil input[type="text"]{
+	width: 100%;
+	background-color: #17171b;
+	border: 1px solid dimgrey;
+	height: 38px;
+	border-radius: 3px;
+	
+}
+.modal-body-perfil input[type="text"]::placeholder{
+	color: white;
+	padding-left: 10px;
+}
+.file-perfil{
+	height: 50px;
+}
+.custom-label-perfil{
+	padding: 6.5px 10px;
+}
+.modal-body-perfil button{
+	color: white !important;
+	padding: 5px 15px;
+	background-color: #BD0507;
+	border-radius: 5px;
+	margin:auto;
+	margin-top:15px;
+	width: 200px;
+	text-align: center;
+	font-size: 18px;
+	text-decoration: none;
+	font-weight: 500;
+	cursor: pointer;
+}
+.modal-title-perfil{
+	color: white;
+}
+/* Menu vista administrativa */
+.menu-admin{
+	display: grid;
+	grid-template-columns: repeat(1fr,3);
+	grid-template-rows: repeat(1fr,2);
+	place-items: center;
+	width: 80%;
+	
+}
+.menu-admin img{
+	grid-column: 2/3;
+	margin-top: 10px;
+}
+.menu-admin a{
+	border-bottom: 2px solid white;
+	padding:10px 0 3px;
+	width: 100%;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-size: 25px;
+}
+.menu-admin a:hover{
+	color:#BD0507;
+	border-bottom: 2px solid #BD0507;
+	transition: ease .5s;
+}
+
+.link-nav{
+	grid-column: 1/2;
+}
+.menu-admin a:nth-child(1){
+	grid-row: 2/3;
+	grid-column: 2/3;
+}
+.menu-admin a:last-child{
+	grid-row: 2/3;
+	grid-column: 3/4;
+}
+/* Cambiar el fondo del dropdown a negro */
+.dropdown-menu {
+   	background-color: #111114;
+    border:#BD0507 solid 2px;
+	border-top:0;
+	left: -1px !important; /* Alinea el menú con el botón */
+	top: 35px !important;
+	right: auto !important;
+	transform: translateX(0) !important;
+	border-radius: 0 0 5px 5px;
+}
+
+/* Cambiar el color del texto */
+.dropdown-menu .dropdown-item {
+    color: white !important;
+	
+}
+
+/* Cambiar el color de los elementos al pasar el cursor */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #333 !important;
+    color: white !important;
+}
+.dropdown-menu form{
+	width:100%;
+	font-size: 20px;
+}

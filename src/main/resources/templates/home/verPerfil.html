@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Perfil de Usuario</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{../css/style.css}">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Teko:wght@300..700&display=swap');
+	</style>
+</head>
+
+<body>
+	<div class="div-body-verperfil">
+		<div class="div-titulo">
+			<span>Perfil de Usuario</span>
+			<div data-bs-toggle="modal" data-bs-target="#exampleModal">✏️ Editar Perfil</div>
+		</div>
+		<div class="div-username">
+			<div class="username-img">
+				<img width="150px" height="120px" th:src="@{'/images/'}+${usuario.foto_perfil}">
+			</div>
+			<div class="username-nombre">
+				<span th:text="${usuario.username}">Username</span>
+				<span th:text="${usuario.nombre}">NAME</span>
+			</div>
+			<div class="username-correo">
+				<span th:text="${usuario.correo}"></span>
+
+			</div>
+			<div class="username-edad">
+				<span th:text="${usuario.edad}"></span>
+			</div>
+			<div class="username-estado">
+				<span th:text="${usuario.estadoUsuario.nombre}"></span>
+			</div>
+			<div class="username-correo2">
+				<span>Correo</span>
+			</div>
+			<div class="username-edad2">
+				<span>Edad</span>
+			</div>
+			<div class="username-estado2">
+				<span>Estado</span>
+			</div>
+		</div>
+		<div class="div-robot">
+			<span>Robot de Batalla</span>
+			<div>
+				<img th:src="@{'/images/'}+${usuario.foto_robot}" class="">
+			</div>
+		</div>
+		<div class="div-victorias">
+			<div class="logo-copa">
+			</div>
+			<div>
+				<span>VICTORIAS</span>
+				<span th:text="${cantidadVictorias}"></span>
+			</div>
+
+		</div>
+		<div class="div-categoria">
+			<span id="categoria" style="display: none;" th:text="${usuario.categoriaId.nombre}"></span>
+			<span class="titulo-categoria">Categoria</span>
+			<div class="div-line">
+				<div class="div-line2">
+					<div class="linea"></div>
+					<span>Amateur</span>
+				</div>
+				<div class="div-line2">
+					<div class="linea"></div>
+					<span>Semi-Profesional</span>
+				</div>
+				<div class="div-line2">
+					<div class="linea"></div>
+					<span>Profesional</span>
+				</div>
+			</div>
+			<div class="foto-robot">
+				<div></div>
+			</div>
+		</div>
+		<div class="div-trayectoria">
+			<div class="logo-trayectoria">
+			</div>
+			<div>
+				<span>TRAYECTORIA</span>
+				<span>2</span>
+			</div>
+		</div>
+	</div>
+	<!-- Modal Editar Perfil -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title modal-title-perfil" id="exampleModalLabel">Editar Perfil</h5>
+					<button type="button" class="btn-close btn-close-perfil" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body modal-body-perfil">
+					<form th:action="@{/home/perfil/editar}" method="post" enctype="multipart/form-data">
+						<input type="text" class="form-control" id="username" name="username" th:value="${usuario.username}" placeholder="Username">
+						<div class="file-efect">
+							<label for="file-input" class="custom-label custom-label-perfil">Subir foto</label>
+							<span id="file-name">Sin archivos seleccionados</span>
+							<input type="file" name="img" id="file-input" class="custom-input " accept="image/*"
+								placeholder="Sube una imagen">
+						</div>
+						<button type="submit" class="">Actualizar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<script>
+		//script para manejar los colores segun la categoria
+		document.addEventListener("DOMContentLoaded", function () {
+			const categoriaSpan = document.getElementById("categoria");
+			const categoria = categoriaSpan.textContent.trim();
+			const lineas = document.querySelectorAll(".div-line2");
+
+			lineas.forEach((lineaDiv) => {
+				const span = lineaDiv.querySelector("span");
+				const linea = lineaDiv.querySelector(".linea");
+
+				// Cambia el color dependiendo del texto
+				if (span.textContent.trim() === categoria) {
+					span.style.color = "#DDBE5F"; // Cambiar el color del texto
+					linea.style.backgroundColor = "#DDBE5F"; // Cambiar el color del div
+				} else {
+					span.style.color = ""; // Resetea los colores
+					linea.style.backgroundColor = ""; // Resetea los colores
+				}
+			});
+		});
+
+	</script>
+	<script>
+		//script para manejar la foto del robot
+		document.addEventListener("DOMContentLoaded", function () {
+			const categoriaSpan = document.getElementById("categoria");
+			const categoria = categoriaSpan.textContent.trim(); // Obtenemos el contenido de la categoría
+			const fotoRobotDiv = document.querySelector(".foto-robot div");
+
+			// Cambia la imagen de fondo según la categoría
+			if (categoria === "Amateur") {
+				fotoRobotDiv.style.backgroundImage = "url('/images/logo-amateur.png')";
+			} else if (categoria === "Semi-Profesional") {
+				fotoRobotDiv.style.backgroundImage = "url('/images/logo-semiprofesional.png')";
+			} else if (categoria === "Profesional") {
+				fotoRobotDiv.style.backgroundImage = "url('/images/logo-profesional.png')";
+			}
+		});
+	</script>
+
+
+	<script>
+	document.getElementById("file-input").addEventListener("change", function () {
+	    let fileName = this.files.length > 0 ? this.files[0].name : "Sin archivos seleccionados";
+	    document.getElementById("file-name").textContent = fileName;
+	});
+	</script>
+
+</body>
+
+</html>

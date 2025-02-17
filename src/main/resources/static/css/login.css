@@ -1,0 +1,247 @@
+.login,
+
+html {
+	height: 100%;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	background-image: url(https://html.designingmedia.com/crox/assets/images/upcoming_matches_background.png);
+	background-size: cover;
+	/* Ajusta la imagen para cubrir el elemento */
+	background-position: center;
+	/* Centra la imagen */
+	background-repeat: no-repeat;
+	/* Evita que la imagen se repita */
+	background-color: #17171b;
+
+}
+
+h1 {
+	font-family: "Teko", serif;
+	;
+	color: white;
+}
+
+.login .container {
+	width: 500px;
+	padding: 20px;
+	background: transparent;
+	/* Opcional: fondo blanco */
+
+	/* Opcional: sombra */
+	border-radius: 5px;
+	/* Opcional: bordes redondeados */
+}
+
+.login .container form {
+	background-color: transparent;
+	border: 2px solid #BD0507;
+	color: white;
+}
+
+.login .container form input {
+	background-color: #17171b;
+	border-color: dimgrey;
+	height: 60px;
+	border-radius: 5px;
+	color: white;
+
+}
+
+.login .container form input::placeholder {
+	color: white;
+}
+
+.needs-validation {
+	background-color: #f0f0f0;
+	border-radius: 10px;
+}
+
+body {
+	background-color: transparent;
+	width: 500px;
+}
+
+.div_logo {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+.logo {
+	text-align: center;
+}
+
+button,
+.button {
+	background-color: #BD0507;
+	height: 50px;
+	width: 95%;
+	border: none;
+	color: white;
+	font-size: 20px;
+}
+
+a {
+	color: #BD0507;
+	text-decoration: none;
+}
+
+.custom-input {
+	display: none;
+}
+
+/* Estilo del botón personalizado */
+.custom-label {
+	display: inline-block;
+
+	color: white;
+	padding: 17px 15px;
+	font-size: 14px;
+
+	cursor: pointer;
+	transition: background-color 0.3s;
+	height: 100%;
+	border-right: 1px solid dimgrey;
+}
+
+/* Efecto hover */
+.custom-label:hover {
+	background-color: dimgray;
+}
+
+/* Estilo del texto que muestra el archivo */
+#file-name {
+	margin-left: 10px;
+	font-size: 14px;
+	color: #ddd;
+}
+
+.file-efect {
+	background-color: #17171b;
+	border: 1px solid dimgrey;
+	height: 60px;
+	border-radius: 5px;
+	width: 96%;
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+
+}
+
+.trayectoria {
+	color: white;
+}
+
+.custom-swal-border {
+	border: 2px solid #ff4d4d;
+	/* Cambia el color del borde */
+	border-radius: 10px;
+	/* Opcional: Ajusta las esquinas redondeadas */
+	box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+	/* Efecto de sombra */
+}
+
+.custom-red-button {
+	background-color: #ff4d4d !important;
+	/* Rojo */
+	color: #fff !important;
+	/* Texto blanco */
+	border: none !important;
+	/* Sin bordes */
+	border-radius: 5px;
+	/* Bordes redondeados */
+	padding: 10px 20px;
+	/* Tamaño del botón */
+	font-size: 16px;
+	/* Tamaño de la fuente */
+	cursor: pointer;
+	/* Cambiar cursor al pasar sobre el botón */
+}
+
+.custom-red-button:hover {
+	background-color: #e63939 !important;
+	/* Color al pasar el mouse */
+}
+
+.custom-red-button:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+/* Estilo general del contenedor del checkbox */
+.form-check {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+/* Ocultar el checkbox estándar */
+.form-check-input {
+	display: none;
+}
+
+/* Estilo del checkbox personalizado */
+.form-check-label {
+	position: relative;
+	padding-left: 35px;
+	color: white;
+	cursor: pointer;
+	font-size: 14px;
+	font-family: "Teko", serif;
+}
+
+/* Crear el cuadro del checkbox */
+.form-check-label::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	border: 2px solid dimgrey;
+	border-radius: 3px;
+	background-color: transparent;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilo para cuando el checkbox está seleccionado */
+.form-check-input:checked+.form-check-label::before {
+	background-color: #BD0507;
+	border-color: #BD0507;
+}
+
+/* Icono de checkmark (usando ::after) */
+.form-check-label::after {
+	content: '✓';
+	position: absolute;
+	left: 5px;
+	top: 1px;
+	font-size: 14px;
+	color: white;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+/* Mostrar el checkmark cuando esté seleccionado */
+.form-check-input:checked+.form-check-label::after {
+	opacity: 1;
+}
+.register-button {
+    background-color: #BD0507; /* Rojo intenso */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: not-allowed;
+    opacity: 0.5; /* Botón opaco por defecto */
+    transition: opacity 0.3s, cursor 0.3s;
+}
+
+.register-button.enabled {
+    opacity: 1; /* Botón completamente visible */
+    cursor: pointer;
+}

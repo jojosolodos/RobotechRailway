@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ROBOTECH - Comunidad</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{../css/style.css}">
+
+	<style>
+		.table td,
+		.table th {
+			word-wrap: break-word;
+			word-break: break-all;
+		}
+	</style>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Teko:wght@300..700&display=swap');
+	</style>
+</head>
+
+<body>
+	<div class="div-bienvenida div-padre-comunidad">
+		<div class="menu container">
+			<a class="nav-link" th:href="@{/home}">Inicio</a>
+			<a class="nav-link" th:href="@{/home/torneos}">Torneos</a>
+			<a class="nav-link" th:href="@{/home/clubes}">Clubes</a>
+			<a class="nav-link" th:href="@{/home/clasificacion}">Clasificación</a>
+			<img src="/images/logo_robotech.png" width="150px" height="150px">
+			<a class="nav-link" th:href="@{/home/comunidad}" style="border-bottom: 2px solid #BD0507;">Comunidad</a>
+			<li class="inicio-sesion">
+				<span th:if="${session.usuario == null}">
+					<a id="loginLink" class="nav-link" th:href="@{/login}">Iniciar Sesión</a>
+				</span>
+				<span th:unless="${session.usuario == null}" class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						<span th:text="'Hola, ' + ${session.usuario.username}" style="text-decoration: none;"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a th:href="@{/home/perfil}" class="dropdown-item">Ver perfil</a>
+						</li>
+						<li>
+							<form th:action="@{/logout}" method="post">
+								<button class="dropdown-item">Cerrar Sesión</button>
+							</form>
+						</li>
+
+					</ul>
+				</span>
+			</li>
+		</div>
+		<div class="body container body-comunidad">
+			<div class="Mensaje_bienvenida body-comunidad-hijo">
+				<div class="titulo-filtro">
+					<h2 class="text-center">Deja un Comentario</h2>
+					<button type="button" class="agregar-comentario" data-bs-toggle="modal"
+						th:if="${session.usuario != null}" data-bs-target="#exampleModal">
+						Agregar comentario
+					</button>
+					<button type="button" class="agregar-comentario" th:if="${session.usuario == null}"
+						onclick="Swal.fire({ icon: 'warning', title: 'Debes iniciar sesión', text: 'Regístrate o inicia sesión para comentar.', confirmButtonText: 'OK' })">
+						Agregar comentario
+					</button>
+					<form class="form-filtro" method="get" th:action="@{/home/comunidad}">
+						<select class="" name="tema" id="tema">
+							<option value="" selected>Selecciona un tema</option>
+							<option value="Robots de pelea" th:selected="${tema == 'Robots de pelea'}">Robots de
+								pelea</option>
+							<option value="Estrategias" th:selected="${tema == 'Estrategias'}">Estrategias
+							</option>
+							<option value="Nuevas tecnologías" th:selected="${tema == 'Nuevas tecnologías'}">
+								Nuevas tecnologías</option>
+							<option value="Competencias" th:selected="${tema == 'Competencias'}">Competencias
+							</option>
+							<option value="Otros" th:selected="${tema == 'Otros'}">Otros</option>
+						</select>
+						<button type="submit" class="">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+								class="bi bi-search" viewBox="0 0 16 16">
+								<path
+									d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+							</svg>
+						</button>
+					</form>
+				</div>
+
+				<div class="div-comentarios container py-3">
+					<h1 class="text-center ">Comentarios de la comunidad</h1>
+
+					<table class=" tabla-comunidad">
+						<tbody>
+							<tr th:each="com: ${comunidad.content}">
+
+								<td>
+									<div class="info-comentario">
+										<span th:text="${com.usuarioId.username}"></span>
+										<span th:text="${com.tema}"></span>
+										<span th:text="${com.comentario}"></span>
+									</div>
+								</td>
+								<td>
+									<img th:if="${com.img != null}" th:src="@{'/images/'}+${com.img}"
+										alt="Imagen del comentario" style="width: 150px; height: 150px;">
+								</td>
+
+							</tr>
+						</tbody>
+					</table>
+
+					<!-- Modal Agregar Comentario-->
+					<div class="modal fade agregar-comentario-modal" id="exampleModal" tabindex="-1"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form class="row g-3 needs-validation" th:action="@{/home/comunidad/addcomentario}"
+										method="post" enctype="multipart/form-data">
+										<select class="form-control select-domal" id="tema" name="tema" required>
+											<option value="" disabled selected>Selecciona un tema</option>
+											<th:block th:each="tema : ${temas}">
+												<option th:value="${tema}" th:text="${tema}"></option>
+											</th:block>
+										</select>
+										<div class="file-efect">
+											<label for="file-input" class="custom-label">Subir Imagen</label>
+											<span id="file-name">Sin archivos seleccionados</span>
+											<input type="file" name="img" id="file-input" class="custom-input"
+											accept="image/*" placeholder="Sube una imagen">
+										</div>
+										<div class="textarea-container">
+											<textarea name="comentario" id="comentario" placeholder="Mensaje..." maxlength="255"
+												required></textarea>
+										</div>
+										<div class="modal-footer">
+											<button class="button-subir-comentario" type="submit">Subir
+												Comentario</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Controles de Paginación -->
+					<div class="pagination">
+						<nav th:if="${comunidad.totalPages > 1}">
+							<ul class="pagination justify-content-center">
+								<!-- Botón de anterior -->
+								<li class="page-item" th:classappend="${comunidad.first} ? 'disabled'">
+									<a class="page-link"
+										th:href="@{/home/comunidad(page=${comunidad.number - 1}, tema=${tema})}"
+										aria-label="Anterior">
+										<span aria-hidden="true">&laquo; Anterior</span>
+									</a>
+								</li>
+
+								<!-- Números de página -->
+								<li class="page-item" th:each="i : ${#numbers.sequence(0, comunidad.totalPages - 1)}"
+									th:classappend="${i == comunidad.number} ? 'active'">
+									<a class="page-link" th:href="@{/home/comunidad(page=${i}, tema=${tema})}"
+										th:text="${i + 1}"></a>
+								</li>
+
+								<!-- Botón de siguiente -->
+								<li class="page-item" th:classappend="${comunidad.last} ? 'disabled'">
+									<a class="page-link"
+										th:href="@{/home/comunidad(page=${comunidad.number + 1}, tema=${tema})}"
+										aria-label="Siguiente">
+										<span aria-hidden="true">Siguiente &raquo;</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Filtro de tema -->
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<!-- Script para el boton de inicio de sesion-->
+	<script>
+		// Selecciona el elemento <a> usando su ID o clase
+		const loginLink = document.getElementById("loginLink");
+
+		// Verifica si el elemento <a> contiene un <span> dentro
+		if (loginLink.querySelector("span")) {
+			// Si hay un <span>, elimina todos los estilos del enlace
+			loginLink.style.backgroundColor = "";
+			loginLink.style.padding = "";
+			loginLink.style.borderRadius = "";
+			loginLink.style.color = "";
+			loginLink.style.textDecoration = "";
+		} else {
+			// Si no hay <span>, aplica los estilos
+			loginLink.style.backgroundColor = "#BD0507";
+			loginLink.style.padding = "10px 15px";
+			loginLink.style.borderRadius = "5px";
+			loginLink.style.color = "white"; // Asegura que el texto sea legible
+			loginLink.style.textDecoration = "none"; // Quita el subrayado
+		}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script th:if="${error}">
+		Swal.fire({
+			icon: 'error',
+			title: 'Acción no permitida',
+			text: 'Debes estar registrado para comentar.',
+			confirmButtonText: 'OK'
+		});
+	</script>
+	<script th:if="${longComentario != null}">
+    Swal.fire({
+        icon: 'error',
+        title: 'Comentario demasiado largo',
+        text: 'Tu comentario tiene ' + /*[[${longComentario}]]*/ + ' caracteres, el límite es 255.',
+        confirmButtonColor: '#d33'
+    });
+</script>
+
+
+
+</body>
+
+</html>

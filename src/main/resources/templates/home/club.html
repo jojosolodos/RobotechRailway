@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ROBOTECH - Clubes</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{../css/style.css}">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Teko:wght@300..700&display=swap');
+	</style>
+</head>
+
+<body>
+	<div class="div-bienvenida">
+		<div class="menu container">
+			<a class="nav-link" th:href="@{/home}">Inicio</a>
+			<a class="nav-link" th:href="@{/home/torneos}">Torneos</a>
+			<a class="nav-link" th:href="@{/home/clubes}" style="border-bottom: 2px solid #BD0507;">Clubes</a>
+			<a class="nav-link" th:href="@{/home/clasificacion}">Clasificación</a>
+			<img src="/images/logo_robotech.png" width="150px" height="150px">
+			<a class="nav-link" th:href="@{/home/comunidad}">Comunidad</a>
+			<li class="inicio-sesion">
+				<span th:if="${session.usuario == null}">
+					<a id="loginLink" class="nav-link" th:href="@{/login}">Iniciar Sesión</a>
+				</span>
+				<span th:unless="${session.usuario == null}" class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						<span th:text="'Hola, ' + ${session.usuario.username}" style="text-decoration: none;"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a th:href="@{/home/perfil}" class="dropdown-item">Ver perfil</a>
+						</li>
+						<li>
+							<form th:action="@{/logout}" method="post">
+								<button class="dropdown-item">Cerrar Sesión</button>
+							</form>
+						</li>
+
+					</ul>
+				</span>
+			</li>
+		</div>
+		<div class="body body-clubes">
+			<div class="container py-3 div-clubes">
+				<h1 class="text-center p-3 titulo-clubes">Nuestros Clubes</h1>
+				<div class="row row-cols-1 row-cols-md-4 g-4">
+					<div class="col " th:each="clu: ${club}">
+						<a th:href="@{'/home/clubes/' + ${clu.id}}" class="a-clubes" type="">
+							<div class="card card-club">
+								<img th:src="@{'/images/'}+${clu.img}" class="card-img-top" alt="...">
+								<div class="card-body card-body-club">
+									<h5 class="card-title" th:text="${clu.nombre}"></h5>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="div-footer">
+			<div class="robot">
+
+			</div>
+			<div class="mensaje-footer">
+				<span>Que esperas para dejar tu huella en el mundo del competitivo!</span>
+				<label> Dirigete a nuestro apartado de Torneos</label>
+			</div>
+		</div>
+		<div class="footer2">
+			<h4>Copyright 2025, ROBOTECH. All Rights Reserved.</h4>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
+		<!-- Script para el boton de inicio de sesion-->
+		<script>
+			// Selecciona el elemento <a> usando su ID o clase
+			const loginLink = document.getElementById("loginLink");
+
+			// Verifica si el elemento <a> contiene un <span> dentro
+			if (loginLink.querySelector("span")) {
+				// Si hay un <span>, elimina todos los estilos del enlace
+				loginLink.style.backgroundColor = "";
+				loginLink.style.padding = "";
+				loginLink.style.borderRadius = "";
+				loginLink.style.color = "";
+				loginLink.style.textDecoration = "";
+			} else {
+				// Si no hay <span>, aplica los estilos
+				loginLink.style.backgroundColor = "#BD0507";
+				loginLink.style.width = "160px";
+				loginLink.style.height = "50px";
+				loginLink.style.padding = "10px";
+
+			}
+		</script>
+</body>
+
+</html>

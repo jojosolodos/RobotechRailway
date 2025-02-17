@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ROBOTECH - Crear Club</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+	</script>
+
+
+	<style>
+		.custom-swal-border {
+			border: 2px solid #ff4d4d;
+			/* Cambia el color del borde */
+			border-radius: 10px;
+			/* Opcional: Ajusta las esquinas redondeadas */
+			box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+			/* Efecto de sombra */
+		}
+
+		.custom-red-button {
+			background-color: #ff4d4d !important;
+			/* Rojo */
+			color: #fff !important;
+			/* Texto blanco */
+			border: none !important;
+			/* Sin bordes */
+			border-radius: 5px;
+			/* Bordes redondeados */
+			padding: 10px 20px;
+			/* Tamaño del botón */
+			font-size: 16px;
+			/* Tamaño de la fuente */
+			cursor: pointer;
+			/* Cambiar cursor al pasar sobre el botón */
+		}
+
+		.custom-red-button:hover {
+			background-color: #e63939 !important;
+			/* Color al pasar el mouse */
+		}
+
+		.custom-red-button:focus {
+			outline: none;
+			box-shadow: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container py-5">
+		<h1 class="text-center">Agregar Club</h1>
+		<form method="post" th:action="@{/admin/clubs/crear}" enctype="multipart/form-data">
+			<div class="mb-3">
+				<label for="nombre" class="form-label">Nombre del Club</label>
+				<input type="text" class="form-control" id="nombre" name="nombre" required>
+			</div>
+			<div class="mb-3">
+				<label for="descripcion" class="form-label">Descripción</label>
+				<textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
+			</div>
+			<div class="mb-3">
+				<label for="img" class="form-label">Imagen</label>
+				<input type="file" class="form-control" id="img" name="img">
+			</div>
+			<button type="submit" class="btn btn-primary">Crear Club</button>
+		</form>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			let errorMsg = `[[${error1}]]`; // Thymeleaf obtiene el mensaje de error
+			if (errorMsg && errorMsg !== "null") {
+				Swal.fire({
+					title: "Error",
+					text: errorMsg,
+					icon: "error",
+					confirmButtonText: "Entendido",
+					customClass: {
+						popup: 'custom-swal-border',
+						confirmButton: 'custom-red-button'
+					}
+				});
+			}
+		});
+	</script>
+</body>
+
+</html>

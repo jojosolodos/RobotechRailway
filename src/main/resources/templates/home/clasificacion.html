@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ROBOTECH - Clasificación</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{../css/style.css}">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Teko:wght@300..700&display=swap');
+	</style>
+</head>
+
+<body>
+	<div class="div-bienvenida div-clasificacion-body">
+		<div class="menu container">
+			<a class="nav-link" th:href="@{/home}">Inicio</a>
+			<a class="nav-link" th:href="@{/home/torneos}">Torneos</a>
+			<a class="nav-link" th:href="@{/home/clubes}">Clubes</a>
+			<a class="nav-link" th:href="@{/home/clasificacion}"
+				style="border-bottom: 2px solid #BD0507;">Clasificación</a>
+			<img src="/images/logo_robotech.png" width="150px" height="150px">
+			<a class="nav-link" th:href="@{/home/comunidad}">Comunidad</a>
+			<li class="inicio-sesion">
+				<span th:if="${session.usuario == null}">
+					<a id="loginLink" class="nav-link" th:href="@{/login}">Iniciar Sesión</a>
+				</span>
+				<span th:unless="${session.usuario == null}" class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						<span th:text="'Hola, ' + ${session.usuario.username}" style="text-decoration: none;"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a th:href="@{/home/perfil}" class="dropdown-item">Ver perfil</a>
+						</li>
+						<li>
+							<form th:action="@{/logout}" method="post">
+								<button class="dropdown-item">Cerrar Sesión</button>
+							</form>
+						</li>
+
+					</ul>
+				</span>
+			</li>
+		</div>
+		<div class="body">
+			<div class="Mensaje_bienvenida div-tabla-clasificacion container">
+				<h1 class="text-center p-3 titulo-clasificacion">Nuestros mejores jugadores</h1>
+				<div class="div-overflow-tabla py-3">
+
+					<table class="tabla-clasificacion  text-center">
+						<tbody>
+							<tr th:each="vic, iter : ${victorias}">
+								<td>
+
+									<!-- Imágenes de posiciones basadas en la posición global -->
+									<img class="logo-clasificacion" th:if="${currentPage * size + iter.index + 1 <= 24}"
+										th:src="@{'/images/LOGOS/top' + (${currentPage * size + iter.index + 1}) + '.png'}"
+										alt="topImg" />
+								</td>
+								<td>
+									<img th:src="@{'/images/'}+${vic.usuarioId.foto_robot}" alt=""
+										style="width: 50px; height: 50px;">
+								</td>
+								<td th:text=" ${vic.usuarioId.username}"></td>
+								<td>
+									<div class="div-cate-victorias">
+										<span>Categoria</span>
+										<span th:text=" ${vic.usuarioId.categoriaId.nombre}"></span>
+									</div>
+								</td>
+								<td>
+									<div class="div-cate-victorias">
+										<span>Nro Victorias</span>
+										<span th:text="${vic.cantidad}"></span>
+									</div>
+								</td>
+								<td>
+									<a th:href="@{/home/TopUsuario/{id}(id=${vic.usuarioId.id})}">
+										<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+											fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+											<path fill-rule="evenodd"
+												d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+										</svg>
+									</a>
+								</td>
+							</tr>
+							<tr>
+
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="pagination">
+						<nav th:if="${totalPages > 1}">
+							<ul class="pagination justify-content-center">
+								<!-- Botón para ir a la página anterior -->
+								<li class="page-item" th:classappend="${currentPage == 0} ? 'disabled'">
+									<a class="page-link"
+										th:href="@{/home/clasificacion(page=${currentPage - 1}, size=${size})}">
+										&laquo; Anterior
+									</a>
+								</li>
+
+								<!-- Botones de número de página -->
+								<li class="page-item" th:each="i : ${#numbers.sequence(0, totalPages - 1)}"
+									th:classappend="${i == currentPage} ? 'active'">
+									<a class="page-link" th:href="@{/home/clasificacion(page=${i}, size=${size})}"
+										th:text="${i + 1}">
+									</a>
+								</li>
+
+								<!-- Botón para ir a la página siguiente -->
+								<li class="page-item" th:classappend="${currentPage + 1 == totalPages} ? 'disabled'">
+									<a class="page-link"
+										th:href="@{/home/clasificacion(page=${currentPage + 1}, size=${size})}">
+										Siguiente &raquo;
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<!-- Script para el boton de inicio de sesion-->
+	<script>
+		// Selecciona el elemento <a> usando su ID o clase
+		const loginLink = document.getElementById("loginLink");
+
+		// Verifica si el elemento <a> contiene un <span> dentro
+		if (loginLink.querySelector("span")) {
+			// Si hay un <span>, elimina todos los estilos del enlace
+			loginLink.style.backgroundColor = "";
+			loginLink.style.padding = "";
+			loginLink.style.borderRadius = "";
+			loginLink.style.color = "";
+			loginLink.style.textDecoration = "";
+		} else {
+			// Si no hay <span>, aplica los estilos
+			loginLink.style.backgroundColor = "#BD0507";
+			loginLink.style.width = "160px";
+			loginLink.style.height = "50px";
+			loginLink.style.padding = "10px";
+
+		}
+	</script>
+</body>
+
+</html>
